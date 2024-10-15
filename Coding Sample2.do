@@ -8,7 +8,7 @@ gen logy=log(Price)
 reg logy Primary Secondary Type Bedroom Bathroom Parking Garden
 
 eststo LondonOLS
-//Second regression，London——静态IV
+//Second regression，London——Stationary IV
 clear
 
 import excel "D:\Files\Postgraduate Files\课程\2023-24\Project\数据\data.xlsx", sheet("London") firstrow
@@ -18,7 +18,7 @@ gen logy=log(Price)
 ivreg2 logy (Primary Secondary = Inspected Church) Type Bedroom Bathroom Parking Garden 
 
 eststo LondonIV
-//Third regression，London——动态IV
+//Third regression，London——Dynamic IV
 clear
 
 import excel "D:\Files\Postgraduate Files\课程\2023-24\Project\数据\data.xlsx", sheet("London") firstrow
